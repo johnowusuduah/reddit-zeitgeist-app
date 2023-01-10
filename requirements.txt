@@ -26,3 +26,4 @@ Werkzeug==2.2.2
 
 great_expectations
 dask
+geopandas
