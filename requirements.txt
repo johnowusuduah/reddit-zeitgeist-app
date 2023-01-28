@@ -27,4 +27,3 @@ Werkzeug==2.2.2
 sklearn
 polar
 pandas
-torch
