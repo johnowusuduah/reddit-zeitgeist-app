@@ -1,0 +1,33 @@
+name: Reddit Zeitgeist Flask App
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  FLASK_APP: app.py
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11.1
+
+    - name: Install Dependencies
+      run: |
+        make install
+    - name: |
+        make install
+    - name: Deploy to Server
+      run: |
+        export FLASK_APP=$FLASK_APP
+        export FLASK_ENV=production
+        make run
