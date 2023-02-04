@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Zeitgeist</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .row {
+          margin-left:-2px;
+          margin-right:-2px;
+        }
+          
+        .column {
+          float: left;
+          width: 50%;
+          padding: 2px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid #ddd;
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 5px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: "00ced1";
+        }
+        
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
+        @media screen and (max-width: 600px) {
+          .column {
+            width: 100%;
+          }
+        }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+<body>
+    <h1>Zeitgeist of Reddit as at {{date}}</h1>
+    <h2>Summary of Sentiments of 50 Hottest (Highest Upvotes) Submissions on Reddit</h2>
+    <!--PLOT BAR CHART-->
+    <!--Canva elements are needed to draw graphics on webpages-->  
+    <canvas id="bar-chart" width="800" height="450"></canvas>
+
+ 
+    <script>
+        var ctx = document.getElementById('bar-chart').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: {{ labels|tojson|safe }},
+            datasets: [{
+              label: 'Sentiment',
+              data: {{ data|tojson|safe }},
+              backgroundColor: 'rgb(49,140,231)',
+              borderColor: '#FFFFFF',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        })
+      </script>
+
+    <h2>Positive Submissions Versus Negative Submission</h2>
+    <!--SHOW TEXT WITH SENTIMENTS IN SEPARATE TABLES--> 
+    <div class="row">
+        <div class="column">
+            <table>
+                <caption>Positive Reddit Submission</caption>
+                <tr>
+                    <th>Reddit Submission</th>
+                    <th>Sentiment</th> 
+                </tr>
+            {% for txt, sent in pos_content %}
+                <tr>
+                    <td>{{ txt }}</td>
+                    <td>{{ sent.title() }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+        <div class="column">
+            <table>
+                <caption>Negative Reddit Submission</caption>
+                <tr>
+                    <th>Reddit Submission</th>
+                    <th>Sentiment</th> 
+                </tr>
+            {% for txt, sent in neg_content %}
+                <tr>
+                    <td>{{ txt }}</td>
+                    <td>{{ sent.title() }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>       
+</body>
+</html>
