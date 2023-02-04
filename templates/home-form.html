@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit Zeitgeist App</title>
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="description" content="This apps tells you about the hottest topics on Reddit and their sentiment" />
+    <style>
+      body {
+        background-color: #3c444c;
+      }
+      h1 {
+        font-family: Nunito;
+        font-size: 24px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 700;
+        line-height: 26.4px;
+        color: #05c8f7;
+      }
+      h3 {
+        font-family: Nunito;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 700;
+        line-height: 15.4px;
+        color: #05c8f7;
+      }
+      p {
+        font-family: Nunito;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 20px;
+        color: whitesmoke;
+      }
+      blockquote {
+        font-family: Nunito;
+        font-size: 21px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 30px;
+      }
+      pre {
+        font-family: Nunito;
+        font-size: 13px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 18.5714px;
+      }
+      .meme_photo {
+        width: 400px;
+        height: 400px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#", method="post">
+        <h1>Welcome to the Reddit Zeitgist App</h1>
+        <p>Created by John Owusu Duah</p>
+        <h3>All you have to do get the hottest submissions on politics subreddit with classified sentiments is to click the Submit Button Below</h2>
+        <p>Note: After you click the Submit button kindly wait for a few seconds as the app fetches the data from Reddit and sends it to a BERT (Bidirectional Encoder Representations from Transformers) text classifier hosted on an AWS Sagemaker endpoint</p>
+        <p><input type = "submit" value="Submit" /></p>
+    </form>
+  </body>
+</html>
+
+
+
