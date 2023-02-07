@@ -1,12 +1,10 @@
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for
-from flask_caching import Cache
-from decouple import config
 from datetime import datetime
 import requests
 import praw
 import json
 import chartjs
-
+import os
 
 views = Blueprint(__name__, "views")
 
@@ -19,14 +17,14 @@ def home():
         return render_template("home-form.html")
 
 
-# VIEW TO BE PLAYED WITH
+# VIEW TO FETCH DATA FROM REDDIT AND POST TO SAGEMAKER ENDPOINT
 @views.route("/predict", methods=["POST","GET"])
 def callendpoint():
     
     # PULL SUBMISSIONS FROM REDDIT API
-    RED_CLIENT_ID = config('RED_CLIENT_ID')
-    RED_CLIENT_SECRET = config('RED_CLIENT_SECRET')
-    RED_USER_AGENT = config('RED_USER_AGENT')
+    RED_CLIENT_ID = os.environ.get('RED_CLIENT_ID', 'not_set')
+    RED_CLIENT_SECRET = os.environ.get('RED_CLIENT_SECRET', 'not_set')
+    RED_USER_AGENT = os.environ.get('RED_USER_AGENT', 'not_set')
 
     # praw object with credentials that returns reddit data
     reddit = praw.Reddit(
@@ -77,6 +75,7 @@ def callendpoint():
 
     return render_template("predict.html", pos_content=pos_ls_tp, neg_content=neg_ls_tp, date=date_time, labels=labels, data=data)
 
+# BOILER PLATE CODE TO EXTEND FUNCTIONALITY IN THE FUTURE
 # RETURN JSON
 @views.route("/json")
 def get_json():
@@ -88,7 +87,7 @@ def get_data():
     data = request.json
     return jsonify(data)
 
-# REDIRECT TO A DIFFERENT PAGE (THIS CASE )
+# REDIRECT TO A DIFFERENT PAGE (THIS CASE)
 @views.route("/go-to-home")
 def go_to_home():
     return redirect(url_for("views.home"))
