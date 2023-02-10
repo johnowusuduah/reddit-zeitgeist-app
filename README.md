@@ -6,3 +6,6 @@
 
 <p><a href="https://9t7m2t6mnz.us-east-1.awsapprunner.com">Reddit Zeitgeist</a></p>
 
+## Architecture
+<img src="https://github.com/johnowusuduah/reddit-zeitgeist-app/blob/main/architecture/rz-architecture.png", alt="architecture'>
+
