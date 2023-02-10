@@ -13,5 +13,11 @@
 ### Flask Web Application Framework Files
 `app.py` and `views.py`
 
-#### HTML files
-'home-form.html' and `pred.html`
+#### HTML Files
+`home-form.html` and `pred.html`
+
+### Docker Documents
+`DockerFile` and `docker-compose.yaml`
+
+### Notebook Finetuning BERT on IMBDB Movie Review Data
+`finetune-BERT-deploy-sagemaker.ipynb`
