@@ -1,6 +1,6 @@
 # Reddit Zeitgeist App
 
-## Do you want to read the hottest submissions on Politics subreddit categorised by sentiment (ranked by count of upvotes)?
+## Do you want to read the hottest submissions on Politics subreddit categorised by sentiment with a BERT Model on AWS Sagemaker Endpoint. (ranked by count of upvotes)?
 
 ### CLICK THE LINK BELOW TO USE THE APP!!
 
@@ -8,4 +8,4 @@
 
 ## Architecture
 <img src="https://github.com/johnowusuduah/reddit-zeitgeist-app/blob/main/architecture/rz-architecture.png", alt="architecture'>
-
+![app architecture](https://github.com/johnowusuduah/reddit-zeitgeist-app/blob/main/architecture/rz-architecture.png)
