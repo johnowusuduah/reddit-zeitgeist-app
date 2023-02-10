@@ -2,7 +2,7 @@
 
 ### Do you want to know the hottest political topics being discussed on Reddit in realtime categorized by sentiment?
 
-Sentiment analysis carried out by a BERT Model finetuned on IMDB moview review data set deployed on AWS Sagemaker Endpoint?
+Sentiment analysis carried out by a BERT Model finetuned on IMDB movie review data set deployed on AWS Sagemaker Endpoint?
 
 ### CLICK THE LINK BELOW TO USE THE APP!!
 
