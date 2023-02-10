@@ -12,3 +12,6 @@
 ## Files
 ### Flask Web Application Framework Files
 `app.py` and `views.py`
+
+#### HTML files
+'home-form.html' and `pred.html`
