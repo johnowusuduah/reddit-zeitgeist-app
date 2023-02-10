@@ -1,6 +1,6 @@
 # Reddit Zeitgeist App
 
-## Do you want to read the hottest submissions on Politics subreddit categorised by sentiment with a BERT Model on AWS Sagemaker Endpoint. (ranked by count of upvotes)?
+## Do you want to read the hottest submissions on Politics subreddit categorised by sentiment with a BERT Model on AWS Sagemaker Endpoint.?
 
 ### CLICK THE LINK BELOW TO USE THE APP!!
 
