@@ -8,3 +8,8 @@
 
 ## Architecture
 ![app architecture](https://github.com/johnowusuduah/reddit-zeitgeist-app/blob/main/architecture/rz-architecture.png)
+
+## Files
+### Flask Web Application Framework Files
+**app.py**
+**views.py**
