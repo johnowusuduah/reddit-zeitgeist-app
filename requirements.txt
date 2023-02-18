@@ -24,4 +24,3 @@ urllib3==1.26.14
 websocket-client==1.5.1
 Werkzeug==2.2.2
 
-greatexpectations
