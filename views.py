@@ -57,7 +57,6 @@ def callendpoint():
     # pair submissions and predicted sentiments in an iterable of tuples
     result_tuple = zip(titles, parsed_sentiment)
 
-    #prelim_result = zip(arr_text, sentiment)
     pos_ls_tp = []
     neg_ls_tp = []
     
@@ -74,20 +73,3 @@ def callendpoint():
     data = [len(pos_ls_tp), len(neg_ls_tp)]
 
     return render_template("predict.html", pos_content=pos_ls_tp, neg_content=neg_ls_tp, date=date_time, labels=labels, data=data)
-
-# BOILER PLATE CODE TO EXTEND FUNCTIONALITY IN THE FUTURE
-# RETURN JSON
-@views.route("/json")
-def get_json():
-    return jsonify({"name": "John", "Coolness": 2/10})
-    
-# HOW TO ACCESS JSON DATA COMING TO A ROUTE (THIS CASE THE ROUTE IS "/DATA")
-@views.route("/data")
-def get_data():
-    data = request.json
-    return jsonify(data)
-
-# REDIRECT TO A DIFFERENT PAGE (THIS CASE)
-@views.route("/go-to-home")
-def go_to_home():
-    return redirect(url_for("views.home"))
